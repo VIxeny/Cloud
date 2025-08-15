@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4y4bfkgjqr3d"]
+
+[ext_resource type="Texture2D" uid="uid://bpflb4we4ss4b" path="res://assets/Square.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bkrcr05rirkm6" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(96, 1)
+
+[node name="player" type="RigidBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="GroundZone" type="Area2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundZone"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="bar" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -60)
+
+[node name="backgroudBar" type="Sprite2D" parent="bar"]
+modulate = Color(0.0923971, 0.0923971, 0.0923971, 1)
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.235, 0.04)
+texture = ExtResource("1_3vyb7")
+
+[node name="foreBar" type="Node2D" parent="bar"]
+position = Vector2(-44, 0)
+scale = Vector2(1e-05, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="bar/foreBar"]
+modulate = Color(0.41, 1, 0.4, 1)
+position = Vector2(44, 0)
+scale = Vector2(0.22, 0.025)
+texture = ExtResource("1_3vyb7")
+
+[connection signal="body_entered" from="GroundZone" to="." method="_on_ground_zone_body_entered"]
+[connection signal="body_exited" from="GroundZone" to="." method="_on_ground_zone_body_exited"]
