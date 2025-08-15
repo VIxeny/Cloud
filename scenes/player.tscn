@@ -9,14 +9,16 @@ size = Vector2(96, 96)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(96, 1)
 
-[node name="player" type="RigidBody2D"]
+[node name="player" type="Node2D"]
+
+[node name="Rigibody2D" type="RigidBody2D" parent="."]
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Rigibody2D"]
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("1_3vyb7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rigibody2D"]
 position = Vector2(1.90735e-06, -1.90735e-06)
 shape = SubResource("RectangleShape2D_u8vuu")
 
@@ -47,5 +49,5 @@ position = Vector2(44, 0)
 scale = Vector2(0.22, 0.025)
 texture = ExtResource("1_3vyb7")
 
-[connection signal="body_entered" from="GroundZone" to="." method="_on_ground_zone_body_entered"]
-[connection signal="body_exited" from="GroundZone" to="." method="_on_ground_zone_body_exited"]
+[connection signal="body_entered" from="GroundZone" to="Rigibody2D" method="_on_ground_zone_body_entered"]
+[connection signal="body_exited" from="GroundZone" to="Rigibody2D" method="_on_ground_zone_body_exited"]
