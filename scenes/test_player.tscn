@@ -3,11 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cloud_test.gd" id="1_22uif"]
 [ext_resource type="PackedScene" uid="uid://b4y4bfkgjqr3d" path="res://scenes/player.tscn" id="1_e7mys"]
 [ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/area_2d.tscn" id="2_x6lmx"]
-
-[sub_resource type="Curve" id="Curve_0ax77"]
-_limits = [1000.0, 2000.0, 0.0, 10.0]
-_data = [Vector2(0, 500), 0.0, 150.0, 0, 1, Vector2(2, 800), 150.0, 0.0, 1, 0]
-point_count = 2
+[ext_resource type="Script" uid="uid://db7iic5vndm" path="res://scripts/camera_2d.gd" id="4_x6lmx"]
 
 [node name="TestPlayer" type="Node"]
 script = ExtResource("1_22uif")
@@ -15,9 +11,9 @@ cloudFly = ExtResource("2_x6lmx")
 
 [node name="player" parent="." instance=ExtResource("1_e7mys")]
 position = Vector2(158, 147)
-power = SubResource("Curve_0ax77")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(184, 54)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(342, 201)
 process_callback = 0
 position_smoothing_enabled = true
+script = ExtResource("4_x6lmx")

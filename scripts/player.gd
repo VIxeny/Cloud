@@ -8,7 +8,7 @@ var direction = Vector2(0.5, -1)
 var time = 0
 var newJump = true
 
-@onready var bar = $bar
+@onready var bar = $"bar"
 
 @export var power: Curve
 
