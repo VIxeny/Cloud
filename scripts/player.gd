@@ -8,7 +8,7 @@ var direction = Vector2(0.5, -1)
 var time = 0
 var newJump = true
 
-@onready var bar = $"bar"
+@onready var bar = $"mount/bar"
 
 @export var power: Curve
 
@@ -17,7 +17,8 @@ func debug_function(text):
 		print(text)
 		
 func _ready() -> void:
-	print(power.get_point_position(1).x)
+	#rint(power.get_point_position(1).x)
+	pass
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and on_ground and newJump:
@@ -43,13 +44,14 @@ func jump():
 	newJump = false
 	apply_impulse(direction * power.sample(time))
 	time = 0
-	print(direction * power.sample(time))
 
 func _on_ground_zone_body_entered(body: Node2D) -> void:
-	on_ground = true
+	if body.is_in_group("ground"):
+		on_ground = true
 
 func _on_ground_zone_body_exited(body: Node2D) -> void:
-	on_ground = false
-	preparing = false
-	bar.visible = false
-	time = 0            
+	if body.is_in_group("ground"):
+		on_ground = false
+		preparing = false
+		bar.visible = false
+		time = 0            

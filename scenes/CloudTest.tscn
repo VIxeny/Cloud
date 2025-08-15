@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xq5gcmcgtw3d"]
+[gd_scene load_steps=3 format=3 uid="uid://eltfjooyjwx2"]
 
-[ext_resource type="Script" uid="uid://ccdj4tii3qh05" path="res://scripts/cloud_test.gd" id="1_djfrv"]
-[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/area_2d.tscn" id="2_ik6bq"]
+[ext_resource type="Script" path="res://scripts/cloud_test.gd" id="1_djfrv"]
+[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/cloud.tscn" id="2_hjcct"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_djfrv")
-cloudFly = ExtResource("2_ik6bq")
+cloudFly = ExtResource("2_hjcct")

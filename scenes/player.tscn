@@ -27,34 +27,35 @@ texture = ExtResource("1_3vyb7")
 position = Vector2(1.90735e-06, -1.90735e-06)
 shape = SubResource("RectangleShape2D_u8vuu")
 
-[node name="GroundZone" type="Area2D" parent="."]
-position = Vector2(0, 50)
+[node name="mount" type="Node2D" parent="."]
 script = ExtResource("3_qhqgy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundZone"]
+[node name="GroundZone" type="Area2D" parent="mount"]
+position = Vector2(0, 51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mount/GroundZone"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_3vyb7")
 
-[node name="bar" type="Node2D" parent="."]
+[node name="bar" type="Node2D" parent="mount"]
 visible = false
 position = Vector2(0, -60)
-script = ExtResource("3_qhqgy")
 
-[node name="backgroudBar" type="Sprite2D" parent="bar"]
+[node name="backgroudBar" type="Sprite2D" parent="mount/bar"]
 modulate = Color(0.0923971, 0.0923971, 0.0923971, 1)
 position = Vector2(0, -5.96046e-08)
 scale = Vector2(0.235, 0.04)
 texture = ExtResource("1_3vyb7")
 
-[node name="foreBar" type="Node2D" parent="bar"]
+[node name="foreBar" type="Node2D" parent="mount/bar"]
 position = Vector2(-44, 0)
 scale = Vector2(1e-05, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="bar/foreBar"]
+[node name="Sprite2D" type="Sprite2D" parent="mount/bar/foreBar"]
 modulate = Color(0.41, 1, 0.4, 1)
 position = Vector2(44, 0)
 scale = Vector2(0.22, 0.025)
 texture = ExtResource("1_3vyb7")
 
-[connection signal="body_entered" from="GroundZone" to="." method="_on_ground_zone_body_entered"]
-[connection signal="body_exited" from="GroundZone" to="." method="_on_ground_zone_body_exited"]
+[connection signal="body_entered" from="mount/GroundZone" to="." method="_on_ground_zone_body_entered"]
+[connection signal="body_exited" from="mount/GroundZone" to="." method="_on_ground_zone_body_exited"]

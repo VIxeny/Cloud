@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cloud_test.gd" id="1_22uif"]
 [ext_resource type="PackedScene" uid="uid://b4y4bfkgjqr3d" path="res://scenes/player.tscn" id="1_e7mys"]
-[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/area_2d.tscn" id="2_x6lmx"]
+[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/cloud.tscn" id="2_x6lmx"]
 [ext_resource type="Script" uid="uid://db7iic5vndm" path="res://scripts/camera_2d.gd" id="4_x6lmx"]
 
 [node name="TestPlayer" type="Node"]
