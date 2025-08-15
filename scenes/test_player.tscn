@@ -1,40 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyesohdtv4cxu"]
 
+[ext_resource type="Script" uid="uid://ccdj4tii3qh05" path="res://scripts/cloud_test.gd" id="1_22uif"]
 [ext_resource type="PackedScene" uid="uid://b4y4bfkgjqr3d" path="res://scenes/player.tscn" id="1_e7mys"]
-[ext_resource type="Texture2D" uid="uid://bpflb4we4ss4b" path="res://assets/Square.png" id="2_0ax77"]
+[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/area_2d.tscn" id="2_x6lmx"]
 
 [sub_resource type="Curve" id="Curve_0ax77"]
 _limits = [1000.0, 2000.0, 0.0, 10.0]
 _data = [Vector2(0, 500), 0.0, 150.0, 0, 1, Vector2(2, 800), 150.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7mys"]
-size = Vector2(239, 20)
-
 [node name="TestPlayer" type="Node"]
+script = ExtResource("1_22uif")
+cloudFly = ExtResource("2_x6lmx")
 
 [node name="player" parent="." instance=ExtResource("1_e7mys")]
 position = Vector2(158, 147)
 power = SubResource("Curve_0ax77")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(165, 356)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_e7mys")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(5.24521e-06, -0.500008)
-scale = Vector2(0.6, 0.0525)
-texture = ExtResource("2_0ax77")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(601, 409)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_e7mys")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(5.24521e-06, -0.500008)
-scale = Vector2(0.6, 0.0525)
-texture = ExtResource("2_0ax77")
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(184, 54)
+process_callback = 0
+position_smoothing_enabled = true

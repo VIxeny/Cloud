@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://xq5gcmcgtw3d"]
+
+[ext_resource type="Script" uid="uid://ccdj4tii3qh05" path="res://scripts/cloud_test.gd" id="1_djfrv"]
+[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/area_2d.tscn" id="2_ik6bq"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_djfrv")
+cloudFly = ExtResource("2_ik6bq")
