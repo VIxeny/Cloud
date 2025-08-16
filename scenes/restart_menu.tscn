@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn6vd55nc0dlp"]
+
+[ext_resource type="Script" uid="uid://bgre5p2y850ku" path="res://scripts/restart_button.gd" id="1_8pyic"]
+
+[node name="restart_menu" type="CanvasLayer"]
+
+[node name="restart_button" type="Button" parent="."]
+offset_left = 310.0
+offset_top = 372.0
+offset_right = 427.0
+offset_bottom = 465.0
+text = "Restart"
+script = ExtResource("1_8pyic")
+
+[node name="highest" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 261.0
+offset_right = 378.0
+offset_bottom = 284.0
+text = "Highest Score: "
+
+[node name="current" type="Label" parent="."]
+offset_left = 262.0
+offset_top = 306.0
+offset_right = 377.0
+offset_bottom = 329.0
+text = "Current Score: "
+
+[connection signal="button_down" from="restart_button" to="restart_button" method="_on_button_down"]

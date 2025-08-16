@@ -7,6 +7,9 @@ var preparing = false
 var direction = Vector2(0.5, -1)
 var time = 0
 var newJump = true
+var game_over = false
+
+var previous_cloud = null
 
 @onready var bar = $"mount/bar"
 
@@ -17,6 +20,10 @@ func debug_function(text):
 		print(text)
 
 func _process(delta: float) -> void:
+	if $"..".y + 300 < position.y and not game_over:
+		game_over = true
+		Score.game_over()
+	
 	if Input.is_action_pressed("jump") and on_ground and newJump:
 		debug_function("jump")
 		preparing = true
@@ -44,6 +51,10 @@ func jump():
 func _on_ground_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ground"):
 		on_ground = true
+		if body != previous_cloud and previous_cloud:
+			Score.add_score()
+		previous_cloud = body
+		
 
 func _on_ground_zone_body_exited(body: Node2D) -> void:
 	if body.is_in_group("ground"):
