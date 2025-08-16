@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://drbsxmcuq8lng"]
 
 [ext_resource type="Script" uid="uid://bnbqin6r1wku5" path="res://scripts/cloud.gd" id="1_2kyfr"]
-[ext_resource type="Texture2D" uid="uid://cyukr3ly0ef12" path="res://assets/cloudTest.png" id="2_n1qj5"]
+[ext_resource type="Texture2D" uid="uid://ct7hnh203gj34" path="res://assets/cloudMain.png" id="2_2kyfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl81w"]
 size = Vector2(439, 35)
@@ -14,5 +14,6 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_dl81w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.0975, 0.085)
-texture = ExtResource("2_n1qj5")
+position = Vector2(0, 3.5)
+scale = Vector2(13.9688, 3.28125)
+texture = ExtResource("2_2kyfr")

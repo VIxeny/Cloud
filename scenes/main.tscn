@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4y4bfkgjqr3d" path="res://scenes/player.tscn" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://db7iic5vndm" path="res://scripts/camera.gd" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cn6vd55nc0dlp" path="res://scenes/restart_menu.tscn" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bajm6hi327c24" path="res://assets/skyBackground.png" id="5_tbgi4"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyhfs")
@@ -21,3 +22,10 @@ script = ExtResource("4_o6xl0")
 
 [node name="restart_menu" parent="." instance=ExtResource("5_tbgi4")]
 visible = false
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -1
+position = Vector2(400, 300)
+texture = ExtResource("5_tbgi4")

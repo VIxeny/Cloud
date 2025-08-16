@@ -15,6 +15,7 @@ func createCloud():
 	cloudCount+=1
 	var temp = cloudFly.instantiate()
 	temp.position = Vector2(x, y)
+	temp.scale = Vector2(1-cloudCount*0.05, 1)
 	add_child(temp)
 	x += randi_range(300, 700)
 	y += randi_range(250, 500)
