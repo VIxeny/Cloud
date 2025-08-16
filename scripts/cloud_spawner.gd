@@ -20,6 +20,6 @@ func createCloud():
 	y += randi_range(250, 500)
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $player.position.x > 500*(cloudCount-1):
 		createCloud()

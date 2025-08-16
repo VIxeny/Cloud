@@ -15,10 +15,6 @@ var newJump = true
 func debug_function(text):
 	if debug:
 		print(text)
-		
-func _ready() -> void:
-	#rint(power.get_point_position(1).x)
-	pass
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and on_ground and newJump:
