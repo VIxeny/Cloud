@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyesohdtv4cxu"]
+
+[ext_resource type="Script" uid="uid://ccdj4tii3qh05" path="res://scripts/cloud_spawner.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/cloud.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b4y4bfkgjqr3d" path="res://scenes/player.tscn" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://db7iic5vndm" path="res://scripts/camera.gd" id="4_o6xl0"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_jyhfs")
+cloudFly = ExtResource("2_tbgi4")
+
+[node name="player" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(158, 147)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(342, 201)
+process_callback = 0
+position_smoothing_enabled = true
+script = ExtResource("4_o6xl0")
