@@ -8,6 +8,9 @@ var y = 300
 
 
 func _ready() -> void:
+	Score.restart_menu = get_node("restart_menu")
+	Score.currentScore = 0
+	Score.in_game_screen = get_node("in_game_screen")
 	createCloud()
 	createCloud()
 

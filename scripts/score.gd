@@ -1,6 +1,7 @@
 extends Node
 
-@onready var restart_menu = get_tree().current_scene.get_node("restart_menu")
+var restart_menu
+var in_game_screen
 
 var highestScore = 0
 var currentScore = 0
@@ -8,6 +9,7 @@ var currentScore = 0
 
 func add_score():
 	currentScore += 1
+	in_game_screen.get_node("label").text = "Current score: " + str(currentScore)
 	print(currentScore)
 
 func game_over():

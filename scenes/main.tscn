@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyesohdtv4cxu"]
+[gd_scene load_steps=9 format=3 uid="uid://dyesohdtv4cxu"]
 
 [ext_resource type="Script" uid="uid://ccdj4tii3qh05" path="res://scripts/cloud_spawner.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://drbsxmcuq8lng" path="res://scenes/cloud.tscn" id="2_tbgi4"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://db7iic5vndm" path="res://scripts/camera.gd" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bajm6hi327c24" path="res://assets/skyBackground.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cn6vd55nc0dlp" path="res://scenes/restart_menu.tscn" id="6_tefeu"]
+[ext_resource type="FontFile" uid="uid://bdpktopvxcyie" path="res://assets/DIGITALPIXELV4-REGULAR.OTF" id="7_o6xl0"]
+
+[sub_resource type="Theme" id="Theme_tipki"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_jyhfs")
@@ -21,7 +24,7 @@ position_smoothing_enabled = true
 script = ExtResource("4_o6xl0")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-repeat_size = Vector2(1, 1)
+scroll_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
@@ -30,3 +33,16 @@ texture = ExtResource("5_tbgi4")
 
 [node name="restart_menu" parent="." instance=ExtResource("6_tefeu")]
 visible = false
+
+[node name="in_game_screen" type="CanvasLayer" parent="."]
+
+[node name="label" type="Label" parent="in_game_screen"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_tipki")
+theme_override_fonts/font = ExtResource("7_o6xl0")
+theme_override_font_sizes/font_size = 12
+text = "Current score: 0"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-58, -99)

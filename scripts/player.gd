@@ -20,6 +20,11 @@ func debug_function(text):
 		print(text)
 
 func _process(delta: float) -> void:
+	if on_ground:
+		$"mount/Sprite2D".frame = 0
+	else:
+		$"mount/Sprite2D".frame = 1
+	
 	if $"..".y + 300 < position.y and not game_over:
 		game_over = true
 		Score.game_over()
