@@ -21,5 +21,5 @@ func createCloud():
 	
 
 func _process(_delta: float) -> void:
-	if $player.position.x > 500*(cloudCount-1):
+	if $player.position.x > x - 1000:
 		createCloud()
