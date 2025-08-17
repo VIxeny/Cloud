@@ -20,8 +20,8 @@ func createCloud():
 	temp.position = Vector2(x, y)
 	temp.scale = Vector2(1-cloudCount*0.05, 1)
 	add_child(temp)
-	x += randi_range(300, 700)
-	y += randi_range(250, 500)
+	x += randi_range(300, 500)
+	y += randi_range(100, 200)
 	
 
 func _process(_delta: float) -> void:

@@ -15,13 +15,15 @@ script = ExtResource("1_jyhfs")
 cloudFly = ExtResource("2_tbgi4")
 
 [node name="player" parent="." instance=ExtResource("3_tefeu")]
-position = Vector2(158, 147)
+position = Vector2(300, 147)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(342, 201)
+position = Vector2(342, 285)
 process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("4_o6xl0")
+camera_x = 250
+camera_y = 50
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
