@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 
 
 func jump():
+	$"Jump".play()
 	preparing = false
 	bar.visible = false
 	newJump = false

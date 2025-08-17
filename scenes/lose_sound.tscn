@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cudibsvg6vhfr"]
+
+[ext_resource type="AudioStream" uid="uid://clf85apky61ik" path="res://assets/Evil_Laugh.wav" id="1_y12vf"]
+
+[node name="LoseSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_y12vf")

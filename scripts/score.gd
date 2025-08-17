@@ -18,6 +18,7 @@ func game_over():
 	restart_menu.get_node("highest").text = "Highest score: " + str(highestScore)
 	restart_menu.get_node("current").text = "Current score: " + str(currentScore)
 	restart_menu.visible = true
+	LoseSound.play()
 	print("Current Score = ", currentScore)
 	print("Highest Score = ", highestScore)
 	
